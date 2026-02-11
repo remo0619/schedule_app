@@ -18,6 +18,11 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to :schedules do %>
+        <%= image_tag "schedule_app_logo", class: "logo" %>
+      <% end%>
+    </header>
     <%= yield %>
   </body>
 </html>

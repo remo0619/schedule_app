@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: rgb(94, 94, 203);
+  color: white;
+  font-size: 13px;
+  padding: 5px 0;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.schedule-table {
+  margin: auto;
+}
+
+.schedule-table,
+.table-header, .table-data {
+  padding: 0 8px;
+  border: solid;
+  border-width: 1px;
+  border-collapse: collapse;
+}
