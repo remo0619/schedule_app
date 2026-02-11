@@ -1,25 +1,30 @@
-<h3 class="page-title">予定一覧</h3>
-<table class="schedule-table">
+<h3>予定一覧</h3>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<table>
   <thead>
     <tr>
-      <th class="table-header">ID</th>
-      <th class="table-header">タイトル</th>
-      <th class="table-header">開始日</th>
-      <th class="table-header">終了日</th>
-      <th class="table-header">終日</th>
-      <th class="table-header">更新日時</th>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
     </tr>
   </thead>
 
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td class="table-data"><%= schedule.id %></td>
-        <td class="table-data"><%= schedule.title %></td>
-        <td class="table-data"><%= schedule.start_date %></td>
-        <td class="table-data"><%= schedule.end_date %></td>
-        <td class="table-data"><%= schedule.is_all_day %></td>
-        <td class="table-data"><%= schedule.updated_at %></td>
+        <td><%= schedule.id %></td>
+        <td><%= schedule.title %></td>
+        <td><%= schedule.start_date %></td>
+        <td><%= schedule.end_date %></td>
+        <td><%= schedule.is_all_day %></td>
+        <td><%= schedule.updated_at %></td>
       </tr>
     <% end %>
   </tbody>

@@ -13,18 +13,35 @@ header {
   margin-left: 10px;
 }
 
-.page-title {
+h3 {
   text-align: center;
 }
 
-.schedule-table {
+.notice {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+table {
   margin: auto;
 }
 
-.schedule-table,
-.table-header, .table-data {
+th {
   padding: 0 8px;
-  border: solid;
-  border-width: 1px;
-  border-collapse: collapse;
+  background-color: rgb(138, 208, 241);
+}
+
+td {
+  padding: 8px;
+  background-color: rgb(188, 218, 232);
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+li {
+  margin: 10px;
 }
