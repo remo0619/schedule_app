@@ -25,6 +25,15 @@
         <td><%= schedule.end_date %></td>
         <td><%= schedule.is_all_day %></td>
         <td><%= schedule.updated_at.to_fs(:datetime_jp) %></td>
+        <td>
+          <%= link_to "参照", schedule %>
+        </td>
+        <td>
+          <%= link_to "編集", [:edit, schedule] %>
+        </td>
+        <td>
+          <%= link_to "削除", schedule, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
