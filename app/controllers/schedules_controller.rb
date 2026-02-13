@@ -8,7 +8,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(params.require(:schedule).permit(:title, :start_date, :end_date, :schedule_memo))
+    @schedule = Schedule.new(event_params)
     if @schedule.save
       flash[:notice] = "登録が完了しました"
       redirect_to :schedules
@@ -27,7 +27,7 @@ class SchedulesController < ApplicationController
 
   def update
     @schedule = Schedule.find(params[:id])
-    if @schedule.update(params.require(:schedule).permit(:title, :start_date, :end_date, :schedule_memo))
+    if @schedule.update(event_params)
       flash[:notice] = "IDが「#{@schedule.id}」の予定を更新しました"
       redirect_to :schedules
     else
@@ -40,5 +40,9 @@ class SchedulesController < ApplicationController
     @schedule.destroy
     flash[:notice] = "「#{@schedule.title}」を削除しました"
     redirect_to :schedules
+  end
+
+  def event_params
+    params.require(:schedule).permit(:title, :start_date, :end_date, :schedule_memo)
   end
 end
