@@ -42,7 +42,9 @@ class SchedulesController < ApplicationController
     redirect_to :schedules
   end
 
+  private
+
   def event_params
-    params.require(:schedule).permit(:title, :start_date, :end_date, :schedule_memo)
+    params.require(:schedule).permit(:title, :start_date, :end_date, :is_all_day, :schedule_memo)
   end
 end

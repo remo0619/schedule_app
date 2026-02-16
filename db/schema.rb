@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_02_11_074223) do
+ActiveRecord::Schema[7.2].define(version: 2026_02_14_020844) do
   create_table "schedules", force: :cascade do |t|
     t.string "title"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.string "is_all_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

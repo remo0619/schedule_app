@@ -32,6 +32,7 @@ th {
 }
 
 td {
+  text-align: center;
   padding: 8px;
   background-color: rgb(188, 218, 232);
 }
