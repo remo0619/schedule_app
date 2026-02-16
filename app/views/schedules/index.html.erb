@@ -41,3 +41,10 @@
 
 <p><%= link_to "予定を新規登録する", :new_schedule %></p>
 
+<footer>
+  <ul>
+    <li>予定件数: <%= @schedules.count %></li>
+    <li><%= Date.today.to_fs(:date_jp) %></li>
+  </ul>      
+</footer>
+
