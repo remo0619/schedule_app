@@ -1,8 +1,8 @@
 <h3 class="page-title">予定詳細</h3>
 
-<table>
+<table class="table w-75">
   <tr>
-    <th>タイトル</th>
+    <th style="width: 20%">タイトル</th>
     <td><%= @schedule.title %></td>
   </tr>
   <tr>
@@ -14,6 +14,10 @@
     <td><%= @schedule.end_date %></td>
   </tr>
   <tr>
+    <th>終日</th>
+    <td><%= @schedule.is_all_day %></td>
+  </tr>
+  <tr>
     <th>メモ</th>
     <td><%= @schedule.schedule_memo %></td>
   </tr>
@@ -21,6 +25,6 @@
 
 <div>
   <ul>
-    <li><%= link_to "予定一覧へ戻る", :schedules %></li>
+    <li><%= link_to "予定一覧へ戻る", :schedules, class: "btn btn-secondary" %></li>
   </ul>
 </div>

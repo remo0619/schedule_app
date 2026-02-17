@@ -17,12 +17,20 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column">
     <header>
       <%= link_to :schedules do %>
         <%= image_tag "schedule_app_logo", class: "logo" %>
       <% end%>
     </header>
-    <%= yield %>
+    <main class="container mt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-10">
+            <%= yield %>
+          </div>
+        </div>
+      </div
+    </main>
   </body>
 </html>

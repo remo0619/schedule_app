@@ -1,5 +1,7 @@
-body {
+html, body {
   margin: 0;
+  height: 100%;
+  background-color: rgb(244, 243, 243);
 }
 
 header {
@@ -17,24 +19,8 @@ h3 {
   text-align: center;
 }
 
-.notice {
-  background-color: aquamarine;
-  text-align: center;
-}
-
 table {
   margin: auto;
-}
-
-th {
-  padding: 0 8px;
-  background-color: rgb(138, 208, 241);
-}
-
-td {
-  text-align: center;
-  padding: 8px;
-  background-color: rgb(188, 218, 232);
 }
 
 ul {
