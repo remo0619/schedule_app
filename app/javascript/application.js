@@ -4,11 +4,11 @@ import "controllers"
 import "bootstrap"
 // import "data-confirm-modal"
 
-$(document).on('turbo:load', function() {
-  console.log("jQuery check:", typeof $); // コンソールで確認用
-
-  if (typeof $.fn.bootstrapMaterialDatePicker !== 'undefined') {
-    $('.datetimepicker').bootstrapMaterialDatePicker({
+const initDateTimePicker = () => {
+  const $picker = $('.datetimepicker');
+  
+  if ($picker.length > 0 && typeof $.fn.bootstrapMaterialDatePicker === 'function') {
+    $picker.bootstrapMaterialDatePicker({
       format: 'YYYY-MM-DD',
       lang: 'ja',
       weekStart: 0, 
@@ -17,7 +17,8 @@ $(document).on('turbo:load', function() {
       time: false,
       date: true
     });
-  } else {
-    console.error("Datetimepicker plugin not found!");
   }
-});
+};
+
+// ページ遷移時(load)とバリデーションエラー等による再描画時(render)の両方に対応
+$(document).on('turbo:load turbo:render', initDateTimePicker);
