@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for(:title) || "Schedule App" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,9 +15,32 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/ja.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/T00rk/bootstrap-material-datetimepicker@master/css/bootstrap-material-datetimepicker.css">
+    <script src="https://cdn.jsdelivr.net/gh/T00rk/bootstrap-material-datetimepicker@master/js/bootstrap-material-datetimepicker.js"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column">
+    <header>
+      <%= link_to :schedules do %>
+        <%= image_tag "schedule_app_logo", class: "logo" %>
+      <% end%>
+    </header>
+    <main class="container mt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-10">
+            <%= yield %>
+          </div>
+        </div>
+      </div
+    </main>
   </body>
 </html>
